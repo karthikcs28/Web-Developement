@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Event-Driven UI</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 100px;
+            border: 2px solid black;
+            text-align: center;
+            line-height: 100px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2 id="title">Interactive JS UI</h2>
+
+<button id="btn">Click Me</button>
+<p id="text">Hello</p>
+
+<input type="text" id="input" placeholder="Type something">
+<p id="output"></p>
+
+<div id="box">Hover Me</div>
+
+<script>
+let btn = document.getElementById("btn");
+let text = document.getElementById("text");
+let input = document.getElementById("input");
+let output = document.getElementById("output");
+let box = document.getElementById("box");
+
+/* Click Event */
+btn.addEventListener("click", function() {
+    text.innerText = "Button Clicked!";
+});
+
+/* Input Event */
+input.addEventListener("input", function() {
+    output.innerText = input.value;
+});
+
+/* Mouse Events */
+box.addEventListener("mouseover", function() {
+    box.style.backgroundColor = "lightblue";
+});
+
+box.addEventListener("mouseout", function() {
+    box.style.backgroundColor = "";
+});
+</script>
+
+</body>
+</html>

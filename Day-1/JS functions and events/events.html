@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Events – Working Demo</title>
+    <style>
+        body { font-family: Arial; }
+        #box {
+            width: 200px;
+            height: 100px;
+            border: 2px solid black;
+            margin-top: 10px;
+            text-align: center;
+            line-height: 100px;
+        }
+        #log {
+            margin-top: 15px;
+            padding: 10px;
+            border: 1px solid gray;
+            height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+
+<h2 id="title">JavaScript Events Demo</h2>
+
+<button id="btn">Click / Double Click</button><br><br>
+
+<input type="text" id="inputBox" placeholder="Type here"><br><br>
+
+<select id="dropdown">
+    <option value="">Select</option>
+    <option>Option 1</option>
+    <option>Option 2</option>
+</select>
+
+<div id="box">Hover / Click</div>
+
+<form id="myForm">
+    <input type="text" required placeholder="Required field">
+    <button type="submit">Submit</button>
+</form>
+
+<div id="log"></div>
+
+<script>
+let log = document.getElementById("log");
+
+function show(event) {
+    log.innerHTML += event + "<br>";
+    log.scrollTop = log.scrollHeight;
+}
+
+let btn = document.getElementById("btn");
+let input = document.getElementById("inputBox");
+let box = document.getElementById("box");
+let dropdown = document.getElementById("dropdown");
+let form = document.getElementById("myForm");
+
+/* Button Events */
+btn.onclick = () => show("Button Click");
+btn.ondblclick = () => show("Button Double Click");
+btn.onmousedown = () => show("Mouse Down on Button");
+btn.onmouseup = () => show("Mouse Up on Button");
+
+/* Input Events */
+input.onfocus = () => show("Input Focus");
+input.onblur = () => show("Input Blur");
+input.oninput = () => show("Input Typing");
+input.onchange = () => show("Input Change");
+input.onkeydown = () => show("Key Down");
+input.onkeyup = () => show("Key Up");
+
+/* Mouse Events */
+box.onclick = () => show("Box Click");
+box.onmouseover = () => show("Mouse Over Box");
+box.onmouseout = () => show("Mouse Out Box");
+box.onmouseenter = () => show("Mouse Enter Box");
+box.onmouseleave = () => show("Mouse Leave Box");
+
+/* Dropdown Event */
+dropdown.onchange = () => show("Dropdown Changed");
+
+/* Form Event */
+form.onsubmit = function(e) {
+    e.preventDefault();
+    show("Form Submitted");
+};
+
+/* Window Events */
+window.onload = () => show("Window Loaded");
+window.onresize = () => show("Window Resized");
+window.onscroll = () => show("Window Scrolled");
+</script>
+
+</body>
+</html>
