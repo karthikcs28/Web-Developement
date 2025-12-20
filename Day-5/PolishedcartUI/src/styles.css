@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
+
+/* HEADER */
+.header {
+  background: #111;
+  color: white;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-btn {
+  cursor: pointer;
+}
+
+/* PRODUCTS */
+.products {
+  padding: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: white;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.product-card img {
+  height: 120px;
+  object-fit: contain;
+}
+
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* DRAWER (ANIMATION POLICY) */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 100%;
+  background: white;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer.show {
+  transform: translateX(0);
+}
+
+.drawer-header,
+.drawer-footer {
+  padding: 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+.drawer-footer {
+  margin-top: auto;
+}
+
+.cart-item {
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.qty button {
+  width: 26px;
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  animation: popup 0.25s ease forwards;
+}
+
+@keyframes popup {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .drawer {
+    width: 100%;
+  }
+}
