@@ -1,0 +1,66 @@
+body { margin: 0; font-family: sans-serif; background: #643942; color: #fff }
+.app { min-height: 100vh }
+.nav { display: flex; justify-content: space-between; padding: 12px; background: #051004 }
+.nav a { margin-left: 12px; color: #94a3b8; text-decoration: none }
+.nav a.active { color: #fff }
+.content { padding: 24px }
+.card { background: #171818; padding: 24px; border-radius: 12px; max-width: 500px; margin: auto }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px }
+.grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.grid .card {
+  text-align: center;
+  border: 1px solid #1e293b;
+  background: #020617;
+  border-radius: 14px;
+  padding: 24px;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grid .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+}
+.card input,
+.card textarea {
+  width: 100%;
+  padding: 12px 6px;
+  margin-top: 12px;
+  border-radius: 10px;
+  border: 1px solid #1e293b;
+  background: #020617;
+  color: #fff;
+  outline: none;
+}
+
+.card textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+.card button {
+  margin-top: 16px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background: #1dd86b;
+}
